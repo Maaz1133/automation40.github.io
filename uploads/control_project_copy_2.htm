@@ -1,0 +1,1369 @@
+<html>
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1252">
+<meta name=Generator content="Microsoft Word 15 (filtered)">
+<title>controll SYSTEM ENGINEERING</title>
+<style>
+<!--
+ /* Font Definitions */
+ @font-face
+	{font-family:"Cambria Math";
+	panose-1:2 4 5 3 5 4 6 3 2 4;}
+@font-face
+	{font-family:Calibri;
+	panose-1:2 15 5 2 2 2 4 3 2 4;}
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:8.0pt;
+	margin-left:0in;
+	line-height:107%;
+	font-size:11.0pt;
+	font-family:"Calibri",sans-serif;}
+h1
+	{mso-style-link:"Heading 1 Char";
+	margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:0in;
+	line-height:107%;
+	page-break-after:avoid;
+	font-size:16.0pt;
+	font-family:"Calibri Light",sans-serif;
+	color:#2F5496;
+	font-weight:normal;}
+h2
+	{mso-style-link:"Heading 2 Char";
+	margin-top:2.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:0in;
+	line-height:107%;
+	page-break-after:avoid;
+	font-size:13.0pt;
+	font-family:"Calibri Light",sans-serif;
+	color:#2F5496;
+	font-weight:normal;}
+p.MsoCaption, li.MsoCaption, div.MsoCaption
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:10.0pt;
+	margin-left:0in;
+	font-size:9.0pt;
+	font-family:"Calibri",sans-serif;
+	color:#44546A;
+	font-style:italic;}
+span.Heading1Char
+	{mso-style-name:"Heading 1 Char";
+	mso-style-link:"Heading 1";
+	font-family:"Calibri Light",sans-serif;
+	color:#2F5496;}
+span.Heading2Char
+	{mso-style-name:"Heading 2 Char";
+	mso-style-link:"Heading 2";
+	font-family:"Calibri Light",sans-serif;
+	color:#2F5496;}
+.MsoChpDefault
+	{font-family:"Calibri",sans-serif;}
+.MsoPapDefault
+	{margin-bottom:8.0pt;
+	line-height:107%;}
+@page WordSection1
+	{size:8.5in 11.0in;
+	margin:1.0in 1.0in 1.0in 1.0in;}
+div.WordSection1
+	{page:WordSection1;}
+-->
+</style>
+
+</head>
+
+<body lang=EN-US link="#0563C1" vlink="#954F72" style='word-wrap:break-word'>
+
+<div class=WordSection1>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<h1><a name="_Toc121592312"><b><span style='font-family:"Calibri",sans-serif;
+color:windowtext'>Abstract</span></b></a></h1>
+
+<h1 style='text-align:justify'><a name="_Toc121592313"><span style='font-size:
+12.0pt;line-height:107%;font-family:"Calibri",sans-serif;color:windowtext'>One
+of the most popular types of variable speed drives is a Dc servo motor system,
+which is utilized in industrial production, process automation, and building
+technology. They are intended for and created for use in motion control applications
+that require great performance, quick reversing, and very accurate positioning.
+The control system, which is made up of a number of components, manages and
+detects the actions of other systems in order to produce the intended result. A
+lot of industrial applications use controllers that have been correctly
+adjusted. The study based on Z-N rule application for PID tuning to achieve
+control system performance optimization is the main topic of this paper. Apply
+the Z-N tuning rule to get an output with better dynamic and static performance
+across the board.</span></a></h1>
+
+<h1 style='text-align:justify'><span style='font-size:12.0pt;line-height:107%;
+font-family:"Calibri",sans-serif;color:windowtext'>It is a frequently used tool
+for many different tasks, from simple industrial work to complex manufacturing,
+like in robotics. It makes use of a PID controller to obtain an error feedback
+signal, which results in a stable angular speed. PID controllers, however, have
+a number of drawbacks, including weak and erratic responses to frequent noise
+and disturbances. In this exercise, we will examine the transfer function's
+system response and determine which answer is ideal for our system. At the
+conclusion, we will use the root locus approach to assess the system's
+stability after designing both simulation and through coding.</span></h1>
+
+<h1><b><span style='font-family:"Calibri",sans-serif;color:windowtext'>Introduction</span></b><b><span
+style='font-family:"Calibri",sans-serif;color:windowtext'> </span></b></h1>
+
+<p class=MsoNormal style='text-align:justify;page-break-after:avoid'><span
+style='font-size:12.0pt;line-height:107%'>The second tuning method developed by
+Ziegler and Nichols did not even rely on the presence of a controller, in
+contrast to the first tuning method they introduced in their seminal 1942
+paper, in which the process was made to oscillate using proportional-only
+automatic control, and the variables of that oscillation served to define PID
+tuning variables. With the second method, the control element (valve) was
+manually &quot;stepped-changed,&quot; and the effect it had on the process
+variable was then investigated. After the step-change in the output signal is
+produced with the controller in manual mode, the dead time and the reaction
+rate are two key components that are thoroughly examined in the process
+variable trend. Dead time (L) is the duration between an output step-change and
+the initial signal of a process variable change (Note 1). The reaction rate is
+the fastest rate at which a process variable can change following a step-change
+in output (the maximum time-derivative of the process variable)</span></p>
+
+<p class=MsoNormal align=center style='text-align:center;page-break-after:avoid'><img
+width=624 height=354 id="Picture 11"
+src="control%20project%20copy%202_files/image001.jpg"
+alt="Z-N tuning method (unit step response) for PID controller. | Download  Scientific Diagram"></p>
+
+<p class=MsoCaption align=center style='text-align:center'>Figure 1
+Zn method open loop</p>
+
+<p class=MsoNormal style='text-align:justify'><span style='font-size:12.0pt;
+line-height:107%'>The reactions that integrating and self-regulating processes
+display are dead time and reaction rate. The process variable will climb at a
+maximum rate following the output step-change, and this rate of rise will
+constitute the process' reaction rate, regardless of whether it ultimately
+stabilizes at a new value. A problem with the Ziegler-Nichols open-loop method
+is that it completely overlooks the distinction between integrating and
+self-regulating process types. This is a problem, as our analysis of each
+process type has indicated. Dead time in a process tends to remain constant
+regardless of how much the output changes, but reaction rate normally
+fluctuates in direct proportion to the amount of the output step-change. For
+instance, a 10% output step-change will often cause the PV to rise at a rate
+that is twice as high as the impacts of a 5% output step-change. To make sure
+that our prediction computations only take into account the process' inherent
+characteristics and not our own arbitrary open-loop tuning operations, we also
+need to take into account the output step-change magnitude (m).</span></p>
+
+<p class=MsoNormal style='text-align:justify'><span style='font-size:12.0pt;
+line-height:107%'>If the controller in question can only provide proportional
+control actions (i.e., is unable to provide integral or derivative control
+actions), Ziegler and Nichols advise setting the controller gain as follows:</span></p>
+
+<p class=MsoNormal align=center style='text-align:center'><img width=32
+height=32 src="control%20project%20copy%202_files/image002.png"
+alt="Ziegler-Nichols open-loop Tuning"><span
+style='font-size:11.0pt;line-height:107%;font-family:"Calibri",sans-serif;
+position:relative;top:8.5pt'><img width=70 height=34
+src="control%20project%20copy%202_files/image003.png"></span></p>
+
+<p class=MsoNormal style='text-align:justify'><b><span style='font-size:14.0pt;
+line-height:107%'>&nbsp;</span></b></p>
+
+<p class=MsoNormal style='text-align:justify'>where Kp is the controller gain
+value you should enter for optimal performance.</p>
+
+<p class=MsoNormal style='text-align:justify'>m is the output step-change
+magnitude measured during open-loop (manual) mode testing (percent)</p>
+
+<p class=MsoNormal style='text-align:justify'>PV/t = R, the process reaction
+rate (percent per minute)</p>
+
+<p class=MsoNormal style='text-align:justify'>Process dead time, L (minutes)</p>
+
+<p class=MsoNormal style='text-align:justify'>Ziegler and Nichols advise
+setting the controller gain to 90% of the proportional-only value and the
+integral time constant to a value just over three times the measured dead time
+value if the controller in question also has integral (reset) action</p>
+
+<p class=MsoNormal align=center style='text-align:center'><img width=32
+height=32 src="control%20project%20copy%202_files/image002.png"
+alt="Ziegler-Nichols open-loop Tuning"><span
+style='font-size:11.0pt;line-height:107%;font-family:"Calibri",sans-serif;
+position:relative;top:8.5pt'><img width=70 height=34
+src="control%20project%20copy%202_files/image003.png"></span></p>
+
+<p class=MsoNormal align=center style='text-align:center'><img width=32
+height=32 src="control%20project%20copy%202_files/image002.png"
+alt="Ziegler-Nichols open-loop Tuning"><span
+style='font-size:11.0pt;line-height:107%;font-family:"Calibri",sans-serif;
+position:relative;top:4.5pt'><img width=90 height=24
+src="control%20project%20copy%202_files/image004.png"></span></p>
+
+<p class=MsoNormal style='text-align:justify'>&#964;i = Controller integral
+setting</p>
+
+<p class=MsoNormal style='text-align:justify'><span style='font-size:12.0pt;
+line-height:107%'>Ziegler and Nichols advise setting the controller gain to
+120% of the proportional-only value, the integral time constant to twice the
+measured dead time value, and the derivative time constant to 50% of the
+measured dead time value if the controller is fully PID capable.</span></p>
+
+<p class=MsoNormal align=center style='text-align:center'><img width=32
+height=32 src="control%20project%20copy%202_files/image002.png"
+alt="Ziegler-Nichols open-loop Tuning"><span
+style='font-size:11.0pt;line-height:107%;font-family:"Calibri",sans-serif;
+position:relative;top:4.5pt'><img width=84 height=24
+src="control%20project%20copy%202_files/image005.png"></span></p>
+
+<p class=MsoNormal style='text-align:justify'><span style='font-size:12.0pt;
+line-height:107%'>&nbsp;</span></p>
+
+<p class=MsoNormal align=center style='text-align:center'><img width=624
+height=334 id="Picture 23" src="control%20project%20copy%202_files/image006.jpg"
+alt="Step response characteristics. The figure shows peak response, peak time, rise time, settling time, and transient time of the response."></p>
+
+<h1><a name="_Toc121592314"><b><span style='font-family:"Calibri",sans-serif;
+color:windowtext'>Methods</span></b></a><b><span style='font-family:"Calibri",sans-serif;
+color:windowtext'> </span></b></h1>
+
+<h2><a name="_Toc121592315"><b><span style='font-family:"Calibri",sans-serif;
+color:windowtext'>Design in Simulink</span></b></a></h2>
+
+<p class=MsoNormal>For design in Simulink step input is used with unity gain
+the setting for the step input is shown in figure 2</p>
+
+<p class=MsoNormal align=center style='text-align:center;page-break-after:avoid'><img
+width=467 height=321 id="Picture 9"
+src="control%20project%20copy%202_files/image007.jpg"
+alt="Graphical user interface, text, application, email&#10;&#10;Description automatically generated"></p>
+
+<p class=MsoCaption align=center style='text-align:center'>Figure 2
+Step input block</p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal align=center style='text-align:center;page-break-after:avoid'><img
+width=624 height=276 id="Picture 26"
+src="control%20project%20copy%202_files/image008.jpg"></p>
+
+<p class=MsoCaption align=center style='text-align:center'>Figure 3
+Case1 2 and 3 Transfer function Design</p>
+
+<p class=MsoNormal style='text-align:justify'><b><span style='font-size:14.0pt;
+line-height:107%'>&nbsp;</span></b></p>
+
+<p class=MsoNormal style='text-align:justify;page-break-after:avoid'><span
+style='font-size:12.0pt;line-height:107%'>The following figures from fig. 1 to
+fig. 5 show that each case design in it and result is displayed using the
+scope. To test the open loop response of the system, we used only step blocks,
+transfer function blocks, and the gain blocks. In the transfer function blocks,
+we added the numerator and denominator coefficients. Sim out blocks were then
+used to send the values to the workspace to plot the root locus and to draw the
+tangent line.</span></p>
+
+<p class=MsoNormal align=center style='text-align:center;page-break-after:avoid'><img
+width=624 height=310 id="Picture 13"
+src="control%20project%20copy%202_files/image009.jpg"></p>
+
+<p class=MsoCaption align=center style='text-align:center'>Figure 4
+MATLAB CODE</p>
+
+<p class=MsoNormal align=center style='text-align:center;page-break-after:avoid'><img
+width=624 height=330 id="Picture 14"
+src="control%20project%20copy%202_files/image010.jpg"
+alt="Graphical user interface, text, application&#10;&#10;Description automatically generated"></p>
+
+<p class=MsoCaption align=center style='text-align:center'>Figure 5 
+MATLAB CODE</p>
+
+<h1 style='text-align:justify'><a name="_Toc121592316"><span style='font-size:
+12.0pt;line-height:107%;font-family:"Calibri",sans-serif;color:windowtext'>According
+to the formulation of the zn method that was already discussed in the
+introduction section, as seen in the figures 6 and 7, we can see that after
+taking the values from the simulation, we take the x intercept and y intercept
+in order to draw that tangent line. The same formulas are used in the MATLAB
+script to calculate the initial values of the Kp, which are shown in the
+figures 11 and 12.</span></a></h1>
+
+<h1 style='text-align:justify'><b><span style='font-family:"Calibri",sans-serif;
+color:windowtext'>Result and Discussion</span></b><b><span style='font-family:
+"Calibri",sans-serif;color:windowtext'> </span></b></h1>
+
+<p class=MsoNormal style='text-align:justify'>According to the formulation of
+the zn method that was already discussed in the introduction section, as seen
+in the figures 6 and 7, we can see that after taking the values from the
+simulation, we take the x intercept and y intercept in order to draw that
+tangent line. The same formulas are used in the MATLAB script to calculate the
+initial values of the Kp, which are shown in the figures 11 and 12.</p>
+
+<h1><a name="_Toc121592317"><b><span style='font-family:"Calibri",sans-serif;
+color:windowtext'>1.Open loop step and system response</span></b></a></h1>
+
+<p class=MsoNormal align=center style='text-align:center;page-break-after:avoid'><img
+width=559 height=427 id="Picture 29"
+src="control%20project%20copy%202_files/image011.png"
+alt="Chart, line chart&#10;&#10;Description automatically generated"></p>
+
+<p class=MsoCaption align=center style='text-align:center'>Figure 6
+Case 1 system response</p>
+
+<p class=MsoNormal align=center style='text-align:center;page-break-after:avoid'><img
+width=555 height=425 id="Picture 30"
+src="control%20project%20copy%202_files/image012.png"
+alt="Chart, line chart&#10;&#10;Description automatically generated"></p>
+
+<p class=MsoCaption align=center style='text-align:center'>Figure 7
+Case 2 system response</p>
+
+<p class=MsoNormal align=center style='text-align:center;page-break-after:avoid'><img
+width=559 height=303 id="Picture 28"
+src="control%20project%20copy%202_files/image013.jpg"
+alt="Chart, line chart&#10;&#10;Description automatically generated"></p>
+
+<p class=MsoCaption align=center style='text-align:center'>Figure 8
+Open loop response case 3</p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<h1 style='text-align:justify'><a name="_Toc121592318"><span style='font-size:
+11.0pt;line-height:107%;font-family:"Calibri",sans-serif;color:windowtext'>The
+amplitude of the case 1 response is approximately equal to 40, case 2 is less
+than 40, and case 3 is less than 35, so we can infer that the rise time of all
+three cases is high from the open loop step response shown in figures 8 through
+10. The open loop step response also informs us that the controller response
+occurs without the use of a feedback system. Our system is not very reliable
+because it takes time for the waveform to change from 0.1 of the final value to
+0.9 of the final value.</span></a></h1>
+
+<h1><b><span style='font-family:"Calibri",sans-serif;color:windowtext'>2.Intial
+Kp value using ZN method</span></b><b><span style='font-family:"Calibri",sans-serif;
+color:windowtext'> </span></b></h1>
+
+<p class=MsoNormal align=center style='text-align:center;page-break-after:avoid'><img
+width=624 height=333 id="Picture 40"
+src="control%20project%20copy%202_files/image014.jpg"></p>
+
+<p class=MsoCaption align=center style='text-align:center'>Figure 9
+Case 1 kp value</p>
+
+<p class=MsoNormal align=center style='text-align:center;page-break-after:avoid'><img
+width=624 height=262 id="Picture 46"
+src="control%20project%20copy%202_files/image015.jpg"></p>
+
+<p class=MsoCaption align=center style='text-align:center'>Figure 10
+Value of kp Case 2</p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal align=center style='text-align:center'><img width=624
+height=335 id="Picture 48" src="control%20project%20copy%202_files/image016.jpg"></p>
+
+<p class=MsoCaption align=center style='text-align:center'>Figure 11
+Value of kp Case 3</p>
+
+<p class=MsoNormal><b><span style='font-size:14.0pt;line-height:107%'>&nbsp;</span></b></p>
+
+<p class=MsoNormal><span style='font-size:12.0pt;line-height:107%'>According to
+the formula the if we take the difference between the time in the each case we
+get the</span></p>
+
+<p class=MsoNormal><b><span style='font-size:12.0pt;line-height:107%'>CASE 1</span></b></p>
+
+<p class=MsoNormal><span style='font-size:12.0pt;line-height:107%'>Ku=36</span></p>
+
+<p class=MsoNormal><span style='font-size:12.0pt;line-height:107%'>Tu=0.560</span></p>
+
+<p class=MsoNormal><span style='font-size:12.0pt;line-height:107%'>Kp=0.6*ku</span></p>
+
+<p class=MsoNormal><span style='font-size:12.0pt;line-height:107%'>Kp=21.6</span></p>
+
+<p class=MsoNormal><b><span style='font-size:12.0pt;line-height:107%'>CASE 2</span></b></p>
+
+<p class=MsoNormal><span style='font-size:12.0pt;line-height:107%'>Ku=40</span></p>
+
+<p class=MsoNormal><span style='font-size:12.0pt;line-height:107%'>Tu=0.40</span></p>
+
+<p class=MsoNormal><span style='font-size:12.0pt;line-height:107%'>Kp=0.6*ku</span></p>
+
+<p class=MsoNormal><span style='font-size:12.0pt;line-height:107%'>Kp=16</span></p>
+
+<p class=MsoNormal><b><span style='font-size:12.0pt;line-height:107%'>CASE 3</span></b></p>
+
+<p class=MsoNormal><span style='font-size:12.0pt;line-height:107%'>Ku=46</span></p>
+
+<p class=MsoNormal><span style='font-size:12.0pt;line-height:107%'>Tu=0.560</span></p>
+
+<p class=MsoNormal><span style='font-size:12.0pt;line-height:107%'>Kp=0.6*ku</span></p>
+
+<p class=MsoNormal><span style='font-size:12.0pt;line-height:107%'>Kp=25.76</span></p>
+
+<h1><a name="_Toc121592319"><b><span style='font-family:"Calibri",sans-serif;
+color:windowtext'>3. Design of P controller</span></b></a><b><span
+style='font-family:"Calibri",sans-serif;color:windowtext'> </span></b></h1>
+
+<h2><a name="_Toc121592320"><b><span style='font-family:"Calibri",sans-serif;
+color:windowtext'>PID Block in Simulink</span></b></a></h2>
+
+<p class=MsoNormal align=center style='text-align:center;page-break-after:avoid'><img
+width=537 height=381 id="Picture 22"
+src="control%20project%20copy%202_files/image017.jpg"></p>
+
+<p class=MsoCaption align=center style='text-align:center'>Figure 12
+PID block in Simulink</p>
+
+<div align=center>
+
+<table class=MsoTableGrid border=1 cellspacing=0 cellpadding=0
+ style='border-collapse:collapse;border:none'>
+ <tr>
+  <td width=208 valign=top style='width:155.8pt;border:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal align=center style='margin-bottom:0in;text-align:center;
+  line-height:normal'><b><span style='font-size:14.0pt'>NO</span></b></p>
+  </td>
+  <td width=208 valign=top style='width:155.85pt;border:solid windowtext 1.0pt;
+  border-left:none;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal align=center style='margin-bottom:0in;text-align:center;
+  line-height:normal'><b><span style='font-size:14.0pt'>KP %</span></b></p>
+  </td>
+  <td width=208 valign=top style='width:155.85pt;border:solid windowtext 1.0pt;
+  border-left:none;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal align=center style='margin-bottom:0in;text-align:center;
+  line-height:normal'><b><span style='font-size:14.0pt'>KP</span></b></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=208 valign=top style='width:155.8pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal align=center style='margin-bottom:0in;text-align:center;
+  line-height:normal'><span style='font-size:14.0pt'>1</span></p>
+  </td>
+  <td width=208 valign=top style='width:155.85pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal align=center style='margin-bottom:0in;text-align:center;
+  line-height:normal'><span style='font-size:14.0pt'>20%</span></p>
+  </td>
+  <td width=208 valign=top style='width:155.85pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal align=center style='margin-bottom:0in;text-align:center;
+  line-height:normal'><span style='font-size:14.0pt'>36</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=208 valign=top style='width:155.8pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal align=center style='margin-bottom:0in;text-align:center;
+  line-height:normal'><span style='font-size:14.0pt'>2</span></p>
+  </td>
+  <td width=208 valign=top style='width:155.85pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal align=center style='margin-bottom:0in;text-align:center;
+  line-height:normal'><span style='font-size:14.0pt'>10%</span></p>
+  </td>
+  <td width=208 valign=top style='width:155.85pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal align=center style='margin-bottom:0in;text-align:center;
+  line-height:normal'><span style='font-size:14.0pt'>33</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=208 valign=top style='width:155.8pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal align=center style='margin-bottom:0in;text-align:center;
+  line-height:normal'><span style='font-size:14.0pt'>3</span></p>
+  </td>
+  <td width=208 valign=top style='width:155.85pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal align=center style='margin-bottom:0in;text-align:center;
+  line-height:normal'><span style='font-size:14.0pt'>-10%</span></p>
+  </td>
+  <td width=208 valign=top style='width:155.85pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal align=center style='margin-bottom:0in;text-align:center;
+  line-height:normal'><span style='font-size:14.0pt'>27</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=208 valign=top style='width:155.8pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal align=center style='margin-bottom:0in;text-align:center;
+  line-height:normal'><span style='font-size:14.0pt'>4</span></p>
+  </td>
+  <td width=208 valign=top style='width:155.85pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal align=center style='margin-bottom:0in;text-align:center;
+  line-height:normal'><span style='font-size:14.0pt'>-20%</span></p>
+  </td>
+  <td width=208 valign=top style='width:155.85pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal align=center style='margin-bottom:0in;text-align:center;
+  line-height:normal'><span style='font-size:14.0pt'>24</span></p>
+  </td>
+ </tr>
+</table>
+
+</div>
+
+<p class=MsoNormal align=center style='text-align:center'><b><span
+style='font-size:14.0pt;line-height:107%'>&nbsp;</span></b></p>
+
+<p class=MsoNormal style='page-break-after:avoid'>&nbsp;</p>
+
+<p class=MsoNormal align=center style='text-align:center'><b><span
+style='font-size:14.0pt;line-height:107%'>&nbsp;</span></b></p>
+
+<p class=MsoNormal align=center style='text-align:center;page-break-after:avoid'>&nbsp;</p>
+
+<p class=MsoNormal align=center style='text-align:center;page-break-after:avoid'>&nbsp;</p>
+
+<p class=MsoNormal><b><span style='font-size:14.0pt;line-height:107%'>&nbsp;</span></b></p>
+
+<p class=MsoNormal><b><span style='font-size:14.0pt;line-height:107%'>&nbsp;</span></b></p>
+
+<p class=MsoNormal><b><span style='font-size:14.0pt;line-height:107%'>&nbsp;</span></b></p>
+
+<p class=MsoNormal><b><span style='font-size:14.0pt;line-height:107%'>CASE 1</span></b></p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal align=center style='text-align:center;page-break-after:avoid'><img
+width=624 height=281 id="Picture 31"
+src="control%20project%20copy%202_files/image018.jpg"
+alt="Diagram&#10;&#10;Description automatically generated"></p>
+
+<p class=MsoCaption align=center style='text-align:center'>Figure 13
+Design in Simulink case 1 P controller</p>
+
+<p class=MsoNormal align=center style='text-align:center;page-break-after:avoid'><img
+width=624 height=341 id="Picture 2"
+src="control%20project%20copy%202_files/image019.jpg"></p>
+
+<p class=MsoCaption align=center style='text-align:center'>Figure 14
+system response with P controller case 1</p>
+
+<p class=MsoNormal><b><span style='font-size:14.0pt;line-height:107%'>&nbsp;</span></b></p>
+
+<p class=MsoNormal><b><span style='font-size:14.0pt;line-height:107%'>&nbsp;</span></b></p>
+
+<p class=MsoNormal><b><span style='font-size:14.0pt;line-height:107%'>&nbsp;</span></b></p>
+
+<p class=MsoNormal><b><span style='font-size:14.0pt;line-height:107%'>CASE 2</span></b></p>
+
+<p class=MsoNormal align=center style='text-align:center;page-break-after:avoid'><img
+width=624 height=275 id="Picture 32"
+src="control%20project%20copy%202_files/image020.jpg"
+alt="Diagram&#10;&#10;Description automatically generated"></p>
+
+<p class=MsoCaption align=center style='text-align:center'>Figure 15
+Design in Simulink P controller case 2  </p>
+
+<p class=MsoNormal align=center style='text-align:center;page-break-after:avoid'><img
+width=624 height=398 id="Picture 4"
+src="control%20project%20copy%202_files/image021.jpg"
+alt="Timeline&#10;&#10;Description automatically generated"></p>
+
+<p class=MsoCaption align=center style='text-align:center'>Figure 16
+system response with P controller case 2</p>
+
+<p class=MsoNormal><b><span style='font-size:14.0pt;line-height:107%'>&nbsp;</span></b></p>
+
+<p class=MsoNormal><b><span style='font-size:14.0pt;line-height:107%'>&nbsp;</span></b></p>
+
+<p class=MsoNormal><b><span style='font-size:14.0pt;line-height:107%'>CASE 3</span></b></p>
+
+<p class=MsoNormal align=center style='text-align:center;page-break-after:avoid'><img
+width=624 height=309 id="Picture 33"
+src="control%20project%20copy%202_files/image022.jpg"
+alt="Diagram&#10;&#10;Description automatically generated"></p>
+
+<p class=MsoCaption align=center style='text-align:center'>Figure 17
+Design in Simulink P controller case 3</p>
+
+<p class=MsoNormal align=center style='text-align:center;page-break-after:avoid'><img
+width=624 height=341 id="Picture 3"
+src="control%20project%20copy%202_files/image019.jpg"
+alt="Timeline&#10;&#10;Description automatically generated"></p>
+
+<p class=MsoCaption align=center style='text-align:center'>Figure 18
+system response with P controller case 3</p>
+
+<p class=MsoNormal style='text-align:justify'><span style='font-size:12.0pt;
+line-height:107%'>For the P controller design, the graph shows that the system
+response becomes more stable with decreasing kp values. The rise time, fall
+time, and setting time are all approximately equal in all three cases, and in
+the case of kp=36, we can see that the peak value is higher than all others,
+indicating that the system is not stable.</span></p>
+
+<h1><a name="_Toc121592321"><b><span style='font-family:"Calibri",sans-serif;
+color:windowtext'>4.Design of PD controller</span></b></a></h1>
+
+<div align=center>
+
+<table class=MsoTableGrid border=1 cellspacing=0 cellpadding=0
+ style='border-collapse:collapse;border:none'>
+ <tr>
+  <td width=157 valign=top style='width:118.1pt;border:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='margin-bottom:0in;line-height:normal'><b><span
+  style='font-size:14.0pt'>NO</span></b></p>
+  </td>
+  <td width=160 valign=top style='width:119.75pt;border:solid windowtext 1.0pt;
+  border-left:none;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='margin-bottom:0in;line-height:normal'><b><span
+  style='font-size:14.0pt'>KP %</span></b></p>
+  </td>
+  <td width=156 valign=top style='width:117.05pt;border:solid windowtext 1.0pt;
+  border-left:none;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='margin-bottom:0in;line-height:normal'><b><span
+  style='font-size:14.0pt'>KP</span></b></p>
+  </td>
+  <td width=150 valign=top style='width:112.6pt;border:solid windowtext 1.0pt;
+  border-left:none;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='margin-bottom:0in;line-height:normal'><b><span
+  style='font-size:14.0pt'>KD</span></b></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=157 valign=top style='width:118.1pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='margin-bottom:0in;line-height:normal'><span
+  style='font-size:14.0pt'>1</span></p>
+  </td>
+  <td width=160 valign=top style='width:119.75pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='margin-bottom:0in;line-height:normal'><span
+  style='font-size:14.0pt'>20%</span></p>
+  </td>
+  <td width=156 valign=top style='width:117.05pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='margin-bottom:0in;line-height:normal'><span
+  style='font-size:14.0pt'>36</span></p>
+  </td>
+  <td width=150 valign=top style='width:112.6pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='margin-bottom:0in;line-height:normal'><span
+  style='font-size:14.0pt'>12</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=157 valign=top style='width:118.1pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='margin-bottom:0in;line-height:normal'><span
+  style='font-size:14.0pt'>2</span></p>
+  </td>
+  <td width=160 valign=top style='width:119.75pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='margin-bottom:0in;line-height:normal'><span
+  style='font-size:14.0pt'>10%</span></p>
+  </td>
+  <td width=156 valign=top style='width:117.05pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='margin-bottom:0in;line-height:normal'><span
+  style='font-size:14.0pt'>33</span></p>
+  </td>
+  <td width=150 valign=top style='width:112.6pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='margin-bottom:0in;line-height:normal'><span
+  style='font-size:14.0pt'>11</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=157 valign=top style='width:118.1pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='margin-bottom:0in;line-height:normal'><span
+  style='font-size:14.0pt'>3</span></p>
+  </td>
+  <td width=160 valign=top style='width:119.75pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='margin-bottom:0in;line-height:normal'><span
+  style='font-size:14.0pt'>-10%</span></p>
+  </td>
+  <td width=156 valign=top style='width:117.05pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='margin-bottom:0in;line-height:normal'><span
+  style='font-size:14.0pt'>27</span></p>
+  </td>
+  <td width=150 valign=top style='width:112.6pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='margin-bottom:0in;line-height:normal'><span
+  style='font-size:14.0pt'>9</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=157 valign=top style='width:118.1pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='margin-bottom:0in;line-height:normal'><span
+  style='font-size:14.0pt'>4</span></p>
+  </td>
+  <td width=160 valign=top style='width:119.75pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='margin-bottom:0in;line-height:normal'><span
+  style='font-size:14.0pt'>-20%</span></p>
+  </td>
+  <td width=156 valign=top style='width:117.05pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='margin-bottom:0in;line-height:normal'><span
+  style='font-size:14.0pt'>24</span></p>
+  </td>
+  <td width=150 valign=top style='width:112.6pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='margin-bottom:0in;line-height:normal'><span
+  style='font-size:14.0pt'>8</span></p>
+  </td>
+ </tr>
+</table>
+
+</div>
+
+<p class=MsoNormal><b><span style='font-size:14.0pt;line-height:107%'>&nbsp;</span></b></p>
+
+<p class=MsoNormal><b><span style='font-size:14.0pt;line-height:107%'>CASE 1</span></b></p>
+
+<p class=MsoNormal align=center style='text-align:center'><img width=624
+height=281 id="Picture 34" src="control%20project%20copy%202_files/image018.jpg"
+alt="Diagram&#10;&#10;Description automatically generated"></p>
+
+<p class=MsoNormal align=center style='text-align:center;page-break-after:avoid'>&nbsp;</p>
+
+<p class=MsoCaption align=center style='text-align:center'>Figure 19
+Design in Simulink PD controller case 1</p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal align=center style='text-align:center;page-break-after:avoid'><img
+width=624 height=375 id="Picture 12"
+src="control%20project%20copy%202_files/image023.jpg"
+alt="Diagram, timeline&#10;&#10;Description automatically generated"></p>
+
+<p class=MsoCaption align=center style='text-align:center'>Figure 20
+system response with PD controller case 1</p>
+
+<p class=MsoNormal><b><span style='font-size:14.0pt;line-height:107%'>&nbsp;</span></b></p>
+
+<p class=MsoNormal><b><span style='font-size:14.0pt;line-height:107%'>&nbsp;</span></b></p>
+
+<p class=MsoNormal><b><span style='font-size:14.0pt;line-height:107%'>CASE 2</span></b></p>
+
+<p class=MsoNormal align=center style='text-align:center;page-break-after:avoid'><img
+width=624 height=275 id="Picture 35"
+src="control%20project%20copy%202_files/image024.jpg"
+alt="Diagram&#10;&#10;Description automatically generated"></p>
+
+<p class=MsoCaption align=center style='text-align:center'>Figure 21
+Design in Simulink PD controller case 2</p>
+
+<p class=MsoNormal align=center style='text-align:center;page-break-after:avoid'><img
+width=624 height=400 id="Picture 10"
+src="control%20project%20copy%202_files/image025.jpg"
+alt="Diagram, timeline&#10;&#10;Description automatically generated"></p>
+
+<p class=MsoCaption align=center style='text-align:center'>Figure 22
+system response with PD controller case 2</p>
+
+<p class=MsoNormal><b><span style='font-size:14.0pt;line-height:107%'>Case 3</span></b></p>
+
+<p class=MsoNormal align=center style='text-align:center;page-break-after:avoid'><img
+width=624 height=338 id="Picture 36"
+src="control%20project%20copy%202_files/image026.jpg"
+alt="Diagram&#10;&#10;Description automatically generated"></p>
+
+<p class=MsoCaption align=center style='text-align:center'>Figure 23
+Design in Simulink PD controller case 3</p>
+
+<p class=MsoNormal><b><span style='font-size:14.0pt;line-height:107%'>&nbsp;</span></b></p>
+
+<p class=MsoNormal align=center style='text-align:center;page-break-after:avoid'><img
+width=624 height=402 id="Picture 8"
+src="control%20project%20copy%202_files/image027.jpg"
+alt="Diagram, timeline&#10;&#10;Description automatically generated"></p>
+
+<p class=MsoCaption align=center style='text-align:center'>Figure 24
+system response with PD controller case </p>
+
+<h1><a name="_Toc121592322"><span style='font-size:12.0pt;line-height:107%;
+font-family:"Calibri",sans-serif;color:windowtext'>For the purpose of designing
+the PD controller, we can see from the figures that when the PID block is set
+to PD, we enter the values from the table and get the results shown in Figures
+22, 24, and 26. In these figures, we can see that the rise time is excessively
+short, the fall time has also become sharp and minimal in each of the three
+cases, and the setting time is almost zero. To calculate the proper value of
+the setting time, fall time, and rise time, we can use the following formulas:</span></a></h1>
+
+<h1><b><span style='font-family:"Calibri",sans-serif;color:windowtext'>5.
+Design of PI controller</span></b></h1>
+
+<div align=center>
+
+<table class=MsoTableGrid border=1 cellspacing=0 cellpadding=0
+ style='border-collapse:collapse;border:none'>
+ <tr>
+  <td width=157 valign=top style='width:118.1pt;border:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='margin-bottom:0in;line-height:normal'><b><span
+  style='font-size:14.0pt'>NO</span></b></p>
+  </td>
+  <td width=160 valign=top style='width:119.75pt;border:solid windowtext 1.0pt;
+  border-left:none;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='margin-bottom:0in;line-height:normal'><b><span
+  style='font-size:14.0pt'>KP %</span></b></p>
+  </td>
+  <td width=156 valign=top style='width:117.05pt;border:solid windowtext 1.0pt;
+  border-left:none;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='margin-bottom:0in;line-height:normal'><b><span
+  style='font-size:14.0pt'>KP</span></b></p>
+  </td>
+  <td width=150 valign=top style='width:112.6pt;border:solid windowtext 1.0pt;
+  border-left:none;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='margin-bottom:0in;line-height:normal'><b><span
+  style='font-size:14.0pt'>KI</span></b></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=157 valign=top style='width:118.1pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='margin-bottom:0in;line-height:normal'><span
+  style='font-size:14.0pt'>1</span></p>
+  </td>
+  <td width=160 valign=top style='width:119.75pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='margin-bottom:0in;line-height:normal'><span
+  style='font-size:14.0pt'>20%</span></p>
+  </td>
+  <td width=156 valign=top style='width:117.05pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='margin-bottom:0in;line-height:normal'><span
+  style='font-size:14.0pt'>36</span></p>
+  </td>
+  <td width=150 valign=top style='width:112.6pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='margin-bottom:0in;line-height:normal'><span
+  style='font-size:14.0pt'>13</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=157 valign=top style='width:118.1pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='margin-bottom:0in;line-height:normal'><span
+  style='font-size:14.0pt'>2</span></p>
+  </td>
+  <td width=160 valign=top style='width:119.75pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='margin-bottom:0in;line-height:normal'><span
+  style='font-size:14.0pt'>10%</span></p>
+  </td>
+  <td width=156 valign=top style='width:117.05pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='margin-bottom:0in;line-height:normal'><span
+  style='font-size:14.0pt'>33</span></p>
+  </td>
+  <td width=150 valign=top style='width:112.6pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='margin-bottom:0in;line-height:normal'><span
+  style='font-size:14.0pt'>11.5</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=157 valign=top style='width:118.1pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='margin-bottom:0in;line-height:normal'><span
+  style='font-size:14.0pt'>3</span></p>
+  </td>
+  <td width=160 valign=top style='width:119.75pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='margin-bottom:0in;line-height:normal'><span
+  style='font-size:14.0pt'>-10%</span></p>
+  </td>
+  <td width=156 valign=top style='width:117.05pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='margin-bottom:0in;line-height:normal'><span
+  style='font-size:14.0pt'>27</span></p>
+  </td>
+  <td width=150 valign=top style='width:112.6pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='margin-bottom:0in;line-height:normal'><span
+  style='font-size:14.0pt'>8.5</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=157 valign=top style='width:118.1pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='margin-bottom:0in;line-height:normal'><span
+  style='font-size:14.0pt'>4</span></p>
+  </td>
+  <td width=160 valign=top style='width:119.75pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='margin-bottom:0in;line-height:normal'><span
+  style='font-size:14.0pt'>-20%</span></p>
+  </td>
+  <td width=156 valign=top style='width:117.05pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='margin-bottom:0in;line-height:normal'><span
+  style='font-size:14.0pt'>24</span></p>
+  </td>
+  <td width=150 valign=top style='width:112.6pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='margin-bottom:0in;line-height:normal'><span
+  style='font-size:14.0pt'>7</span></p>
+  </td>
+ </tr>
+</table>
+
+</div>
+
+<p class=MsoNormal><b><span style='font-size:14.0pt;line-height:107%'>&nbsp;</span></b></p>
+
+<p class=MsoNormal><b><span style='font-size:14.0pt;line-height:107%'>&nbsp;</span></b></p>
+
+<p class=MsoNormal><b><span style='font-size:14.0pt;line-height:107%'>&nbsp;</span></b></p>
+
+<p class=MsoNormal><b><span style='font-size:14.0pt;line-height:107%'>CASE 1</span></b></p>
+
+<p class=MsoNormal align=center style='text-align:center;page-break-after:avoid'><img
+width=624 height=281 id="Picture 62"
+src="control%20project%20copy%202_files/image028.jpg"
+alt="Diagram&#10;&#10;Description automatically generated"></p>
+
+<p class=MsoCaption align=center style='text-align:center'>Figure 25
+Design in Simulink PI controller case 1</p>
+
+<p class=MsoNormal align=center style='text-align:center;page-break-after:avoid'><img
+width=624 height=402 id="Picture 24"
+src="control%20project%20copy%202_files/image029.jpg"
+alt="Graphical user interface&#10;&#10;Description automatically generated"></p>
+
+<p class=MsoCaption align=center style='text-align:center'>Figure 26
+system response with PI controller case 1</p>
+
+<p class=MsoNormal><b><span style='font-size:14.0pt;line-height:107%'>&nbsp;</span></b></p>
+
+<p class=MsoNormal><b><span style='font-size:14.0pt;line-height:107%'>CASE 2</span></b></p>
+
+<p class=MsoNormal align=center style='text-align:center;page-break-after:avoid'><img
+width=624 height=438 id="Picture 44"
+src="control%20project%20copy%202_files/image030.jpg"
+alt="Diagram&#10;&#10;Description automatically generated"></p>
+
+<p class=MsoCaption align=center style='text-align:center'>Figure 27
+Design in Simulink PI controller case 2</p>
+
+<p class=MsoNormal align=center style='text-align:center;page-break-after:avoid'><img
+width=624 height=342 id="Picture 21"
+src="control%20project%20copy%202_files/image031.jpg"></p>
+
+<p class=MsoCaption align=center style='text-align:center'>Figure 28
+system response with PD controller case 2</p>
+
+<p class=MsoNormal><b><span style='font-size:14.0pt;line-height:107%'>CASE 3</span></b></p>
+
+<p class=MsoNormal align=center style='text-align:center;page-break-after:avoid'><img
+width=624 height=276 id="Picture 42"
+src="control%20project%20copy%202_files/image032.jpg"
+alt="Diagram&#10;&#10;Description automatically generated"></p>
+
+<p class=MsoCaption align=center style='text-align:center'>Figure 29
+Design in Simulink PI controller case 3</p>
+
+<p class=MsoNormal align=center style='text-align:center;page-break-after:avoid'><img
+width=624 height=399 id="Picture 20"
+src="control%20project%20copy%202_files/image033.jpg"
+alt="Timeline&#10;&#10;Description automatically generated"></p>
+
+<p class=MsoCaption align=center style='text-align:center'>Figure 30
+system response with PI controller case 3</p>
+
+<p class=MsoNormal style='text-align:justify'><span style='font-size:12.0pt;
+line-height:107%'>Using the same PID block, the PI controller is designed.
+Simulink's properties are changed to create a PI controller, which is used to
+adjust for discrepancies between the commanded setpoint and the actual value
+depending on some kind of feedback. The PI controller is employed mostly
+because of its proportional system-added faster response time. In the PI
+controller's table, we enter the controller's values in the PI block from high
+to low. From the figure, we can see that as we increase the value of the kp and
+kd, the setting time increases but that the peak value rise time and fall time
+do not change significantly. In all three cases, the system appears to be more
+stable when the kp and kd value is minimum. Although we are unable to visualize
+its value graphically</span></p>
+
+<h1><a name="_Toc121592323"><b><span style='font-family:"Calibri",sans-serif;
+color:windowtext'>6. Design of PID controller</span></b></a></h1>
+
+<div align=center>
+
+<table class=MsoTableGrid border=1 cellspacing=0 cellpadding=0
+ style='border-collapse:collapse;border:none'>
+ <tr>
+  <td width=127 valign=top style='width:95.55pt;border:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='margin-bottom:0in;line-height:normal'><b><span
+  style='font-size:14.0pt'>NO</span></b></p>
+  </td>
+  <td width=131 valign=top style='width:98.2pt;border:solid windowtext 1.0pt;
+  border-left:none;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='margin-bottom:0in;line-height:normal'><b><span
+  style='font-size:14.0pt'>KP %</span></b></p>
+  </td>
+  <td width=125 valign=top style='width:93.9pt;border:solid windowtext 1.0pt;
+  border-left:none;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='margin-bottom:0in;line-height:normal'><b><span
+  style='font-size:14.0pt'>KP</span></b></p>
+  </td>
+  <td width=124 valign=top style='width:93.05pt;border:solid windowtext 1.0pt;
+  border-left:none;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='margin-bottom:0in;line-height:normal'><b><span
+  style='font-size:14.0pt'>KI</span></b></p>
+  </td>
+  <td width=116 valign=top style='width:86.8pt;border:solid windowtext 1.0pt;
+  border-left:none;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='margin-bottom:0in;line-height:normal'><b><span
+  style='font-size:14.0pt'>KD</span></b></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=127 valign=top style='width:95.55pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='margin-bottom:0in;line-height:normal'><span
+  style='font-size:14.0pt'>1</span></p>
+  </td>
+  <td width=131 valign=top style='width:98.2pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='margin-bottom:0in;line-height:normal'><span
+  style='font-size:14.0pt'>20%</span></p>
+  </td>
+  <td width=125 valign=top style='width:93.9pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='margin-bottom:0in;line-height:normal'><span
+  style='font-size:14.0pt'>36</span></p>
+  </td>
+  <td width=124 valign=top style='width:93.05pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='margin-bottom:0in;line-height:normal'><span
+  style='font-size:14.0pt'>13</span></p>
+  </td>
+  <td width=116 valign=top style='width:86.8pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='margin-bottom:0in;line-height:normal'><span
+  style='font-size:14.0pt'>12</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=127 valign=top style='width:95.55pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='margin-bottom:0in;line-height:normal'><span
+  style='font-size:14.0pt'>2</span></p>
+  </td>
+  <td width=131 valign=top style='width:98.2pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='margin-bottom:0in;line-height:normal'><span
+  style='font-size:14.0pt'>10%</span></p>
+  </td>
+  <td width=125 valign=top style='width:93.9pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='margin-bottom:0in;line-height:normal'><span
+  style='font-size:14.0pt'>33</span></p>
+  </td>
+  <td width=124 valign=top style='width:93.05pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='margin-bottom:0in;line-height:normal'><span
+  style='font-size:14.0pt'>11.5</span></p>
+  </td>
+  <td width=116 valign=top style='width:86.8pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='margin-bottom:0in;line-height:normal'><span
+  style='font-size:14.0pt'>11</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=127 valign=top style='width:95.55pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='margin-bottom:0in;line-height:normal'><span
+  style='font-size:14.0pt'>3</span></p>
+  </td>
+  <td width=131 valign=top style='width:98.2pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='margin-bottom:0in;line-height:normal'><span
+  style='font-size:14.0pt'>-10%</span></p>
+  </td>
+  <td width=125 valign=top style='width:93.9pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='margin-bottom:0in;line-height:normal'><span
+  style='font-size:14.0pt'>27</span></p>
+  </td>
+  <td width=124 valign=top style='width:93.05pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='margin-bottom:0in;line-height:normal'><span
+  style='font-size:14.0pt'>8.5</span></p>
+  </td>
+  <td width=116 valign=top style='width:86.8pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='margin-bottom:0in;line-height:normal'><span
+  style='font-size:14.0pt'>9</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=127 valign=top style='width:95.55pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='margin-bottom:0in;line-height:normal'><span
+  style='font-size:14.0pt'>4</span></p>
+  </td>
+  <td width=131 valign=top style='width:98.2pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='margin-bottom:0in;line-height:normal'><span
+  style='font-size:14.0pt'>-20%</span></p>
+  </td>
+  <td width=125 valign=top style='width:93.9pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='margin-bottom:0in;line-height:normal'><span
+  style='font-size:14.0pt'>24</span></p>
+  </td>
+  <td width=124 valign=top style='width:93.05pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='margin-bottom:0in;line-height:normal'><span
+  style='font-size:14.0pt'>7</span></p>
+  </td>
+  <td width=116 valign=top style='width:86.8pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='margin-bottom:0in;line-height:normal'><span
+  style='font-size:14.0pt'>8</span></p>
+  </td>
+ </tr>
+</table>
+
+</div>
+
+<p class=MsoNormal><b><span style='font-size:14.0pt;line-height:107%'>&nbsp;</span></b></p>
+
+<p class=MsoNormal><b><span style='font-size:14.0pt;line-height:107%'>CASE 1</span></b></p>
+
+<p class=MsoNormal align=center style='text-align:center;page-break-after:avoid'><img
+width=624 height=281 id="Picture 129"
+src="control%20project%20copy%202_files/image034.jpg"
+alt="Diagram&#10;&#10;Description automatically generated"></p>
+
+<p class=MsoCaption align=center style='text-align:center'>Figure 31
+Design in Simulink PID controller case 1</p>
+
+<p class=MsoNormal align=center style='text-align:center;page-break-after:avoid'><img
+width=624 height=399 id="Picture 25"
+src="control%20project%20copy%202_files/image035.jpg"></p>
+
+<p class=MsoCaption align=center style='text-align:center'>Figure 32
+system response with PID controller case 1</p>
+
+<p class=MsoNormal><b><span style='font-size:14.0pt;line-height:107%'>CASE 2</span></b></p>
+
+<p class=MsoNormal align=center style='text-align:center;page-break-after:avoid'><img
+width=624 height=275 id="Picture 54"
+src="control%20project%20copy%202_files/image036.jpg"
+alt="Diagram&#10;&#10;Description automatically generated"></p>
+
+<p class=MsoCaption align=center style='text-align:center'>Figure 33
+Design in Simulink PID controller case 2</p>
+
+<p class=MsoNormal><b><span style='font-size:14.0pt;line-height:107%'>&nbsp;</span></b></p>
+
+<p class=MsoNormal align=center style='text-align:center;page-break-after:avoid'><img
+width=624 height=403 id="Picture 27"
+src="control%20project%20copy%202_files/image037.jpg"
+alt="Timeline&#10;&#10;Description automatically generated"></p>
+
+<p class=MsoCaption align=center style='text-align:center'>Figure 34
+system response with PID controller case 2</p>
+
+<p class=MsoNormal><b><span style='font-size:14.0pt;line-height:107%'>&nbsp;</span></b></p>
+
+<p class=MsoNormal><b><span style='font-size:14.0pt;line-height:107%'>CASE 3</span></b></p>
+
+<p class=MsoNormal align=center style='text-align:center;page-break-after:avoid'><img
+width=624 height=322 id="Picture 37"
+src="control%20project%20copy%202_files/image038.jpg"
+alt="Diagram&#10;&#10;Description automatically generated"></p>
+
+<p class=MsoCaption align=center style='text-align:center'>Figure 35
+Design in Simulink PID controller case 3</p>
+
+<p class=MsoNormal align=center style='text-align:center;page-break-after:avoid'><img
+width=624 height=397 id="Picture 39"
+src="control%20project%20copy%202_files/image039.jpg"
+alt="Timeline&#10;&#10;Description automatically generated"></p>
+
+<p class=MsoCaption align=center style='text-align:center'>Figure 36
+system response with PID controller case 3<a name="_Toc121592324"></a></p>
+
+<h1><span style='font-size:12.0pt;line-height:107%;font-family:"Calibri",sans-serif;
+color:windowtext'>After adding the value of the pid parameter that is written
+in the pid table, we can see that the system with the larger value of the kp in
+all of the cases has sharp peak point in Kp-36 and Kp-36 while on the other
+hand at Kp=27 and Kp=24 there is minimum fall time and setting time in all of
+the cases is almost same, we can say that with the maxi value of the kp in all
+of the cases there is sharp peak point in Kp-36</span></h1>
+
+<h1><b><span style='font-family:"Calibri",sans-serif;color:windowtext'>7. ROOT
+locus plot</span></b></h1>
+
+<p class=MsoNormal align=center style='text-align:center;page-break-after:avoid'><b><span
+style='font-size:14.0pt;line-height:107%'><img width=560 height=349
+id="Picture 63" src="control%20project%20copy%202_files/image040.png"
+alt="Chart, box and whisker chart&#10;&#10;Description automatically generated"></span></b></p>
+
+<p class=MsoCaption align=center style='text-align:center'>Figure 37
+PID root locus at kp =36 ki =13 kd=12</p>
+
+<p class=MsoNormal align=center style='text-align:center;page-break-after:avoid'><b><span
+style='font-size:14.0pt;line-height:107%'><img width=560 height=326
+id="Picture 128" src="control%20project%20copy%202_files/image041.png"
+alt="Chart&#10;&#10;Description automatically generated"></span></b></p>
+
+<p class=MsoCaption align=center style='text-align:center'>Figure 38
+Root locus of system case 1</p>
+
+<p class=MsoNormal><b><span style='font-size:14.0pt;line-height:107%'>&nbsp;</span></b></p>
+
+<p class=MsoNormal><b><span style='font-size:14.0pt;line-height:107%'>&nbsp;</span></b></p>
+
+<p class=MsoNormal align=center style='text-align:center;page-break-after:avoid'><b><span
+style='font-size:14.0pt;line-height:107%'><img width=560 height=331
+id="Picture 130" src="control%20project%20copy%202_files/image042.png"
+alt="Chart, box and whisker chart&#10;&#10;Description automatically generated"></span></b></p>
+
+<p class=MsoCaption align=center style='text-align:center'>Figure 39
+ PID root locus at kp =36 ki =13 kd=12</p>
+
+<p class=MsoNormal align=center style='text-align:center;page-break-after:avoid'><img
+width=624 height=298 id="Picture 131"
+src="control%20project%20copy%202_files/image043.png"
+alt="Chart, box and whisker chart&#10;&#10;Description automatically generated"></p>
+
+<p class=MsoCaption align=center style='text-align:center'>Figure 40Root
+locus PI kp=27,kdi=9 case 2</p>
+
+<p class=MsoNormal><b><span style='font-size:14.0pt;line-height:107%'>&nbsp;</span></b></p>
+
+<p class=MsoNormal align=center style='text-align:center;page-break-after:avoid'><b><span
+style='font-size:14.0pt;line-height:107%'><img width=596 height=343
+id="Picture 132" src="control%20project%20copy%202_files/image044.png"
+alt="Chart&#10;&#10;Description automatically generated"></span></b></p>
+
+<p class=MsoCaption align=center style='text-align:center'>Figure 41
+Root locus of p controller at KP=36</p>
+
+<p class=MsoNormal style='margin-top:0in;margin-right:2.9in;margin-bottom:8.0pt;
+margin-left:3.3in;text-align:justify'><span style='font-size:12.0pt;line-height:
+107%'>The core system is created in Simulink, and earlier I discussed the
+blocks that are utilized for simulation. I utilized a PID block directly from
+the Simulink library and changed the settings in accordance with the task
+before checking the system reaction, which is covered in more detail in the
+section's conclusion. MATLAB's built-in function rlocus is used to plot the
+root locus. The feedback-gain parameter, k, varies from 0 to infinity as the
+closed-loop poles' trajectories are displayed in the root locus graph. Rlocus
+adaptively selects a set of positive gains k to produce a smooth plot. The
+zeros and poles on the root locus plot are denoted by o and x, respectively.
+There are several ways to calculate the KP, KI, and KD values using the ZN
+approach; the one I chose is described in the introduction section, and the
+same coding is carried out in the MATLAB environment.</span></p>
+
+<h1 style='margin-top:0in;margin-right:2.9in;margin-bottom:0in;margin-left:
+3.3in;margin-bottom:.0001pt;text-align:justify'><a name="_Toc121592326"><b><span
+style='font-family:"Calibri",sans-serif;color:windowtext'>Conclusion</span></b></a></h1>
+
+<p class=MsoNormal style='margin-top:0in;margin-right:2.9in;margin-bottom:8.0pt;
+margin-left:3.3in;text-align:justify'>The PID controller is the backbone of
+modern process control systems. The proportional, integral, and derivative
+control modes each have a distinct function. Proportional and integral control
+modes are needed for the majority of control loops, whereas derivative is only
+occasionally used. Using various Kp, Ki, and Kd values, we test the system's
+responsiveness in this lab experiment. The graph demonstrates that the
+derivative mode produces more control action when the error changes more
+quickly. If the error remains the same, the derivative action is zero. The
+larger the derivative time setting, the more derivative action is performed.
+When the derivative time is set to 0, this option is essentially disabled. We
+can also see that employing root locus enhances system design with more
+precision. If the derivative time is set too long, the control loop will run in
+an unstable manner. It assists in examining the system's long-term stability.
+Using root locus plots, we can calculate the system's gain margin, relative
+stability, phase margin, and settling time.</p>
+
+<p class=MsoNormal style='margin-top:0in;margin-right:2.9in;margin-bottom:8.0pt;
+margin-left:3.3in;text-align:justify'>If the root locus branches move to the
+right, the system is significantly less stable; if they move to the left, the
+system is somewhat more stable. The Ziegler-Nichols tuning rule gives the best
+disturbance rejection performance for your PID loops. With this level, command
+tracking performance is frequently not very good. It is simple—and you might
+not even be aware of it—to select a tuning rule that is insufficient for the
+application.</p>
+
+<p class=MsoNormal><b><span style='font-size:14.0pt;line-height:107%'>&nbsp;</span></b></p>
+
+<h1><a name="_Toc121592327"><b><span style='font-family:"Calibri",sans-serif;
+color:windowtext'>&nbsp;</span></b></a></h1>
+
+<h1><b><span style='font-family:"Calibri",sans-serif;color:windowtext'>&nbsp;</span></b></h1>
+
+<h1><b><span style='font-family:"Calibri",sans-serif;color:windowtext'>&nbsp;</span></b></h1>
+
+<h1><b><span style='font-family:"Calibri",sans-serif;color:windowtext'>&nbsp;</span></b></h1>
+
+<p class=MsoNormal><b><span style='font-size:14.0pt;line-height:107%'>&nbsp;</span></b></p>
+
+</div>
+
+</body>
+
+</html>

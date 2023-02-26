@@ -1,0 +1,8 @@
+Block account=11400Euro;
+travelling=200000RS
+3 months_expense=30000EURO
+university applyy=50000Rs
+visa=70000Rs
+
+
+
